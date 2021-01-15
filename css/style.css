@@ -1,6 +1,11 @@
-.gameboard {
+.card {
     display: flex;
+    /* flex-direction: row; */
     flex-wrap: wrap;
     height: 300px;
     width: 400px
+}
+
+img{
+    height: 100px;
 }
