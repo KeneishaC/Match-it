@@ -62,13 +62,15 @@
     ]
 
 
+    gameCards.sort(() => 0.5 - Math.random())
+
     //Game Play 
     
     const gameboard = document.querySelector('.gameboard')
     let chosenCards = []
     let chosenCardsId = []
     let winCards = []
-    let announcement = document.querySelector('.card')
+    let announcement = document.querySelector('.message')
 
     // let grid = document.querySelector('.gamecards')
     
@@ -82,7 +84,6 @@
         }
         // alert('Game Starts!')
     }
-    gamePlay()
 
     //check for a match
     
@@ -112,6 +113,13 @@
         }
         chosenCards = []
         chosenCardsId = []
+        // displayResult.textContent = winCards.length
+        if (winCards.length === gameCards.lenghth){
+            announcement.innerHTML = 'You found all the matches'
+             setTimeout(function() {
+                announcement.innerHTML = '';
+                }, 750);
+        }
     }
     
     //Flip each Card
@@ -120,10 +128,10 @@
             chosenCards.push(gameCards[cardId].name)
             chosenCardsId.push(cardId)
             this.setAttribute('src', gameCards[cardId].img)
-            if (chosenCards.length===2){
+            if (chosenCards.length === 2){
                 setTimeout(checkMatch, 500)
             }
         }
     
     
-        // createBoard()
+       gamePlay()
