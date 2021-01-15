@@ -49,6 +49,8 @@ const gameCards = [
 const gameboard = document.querySelector('.gameboard')
 let chosenCards = []
 let chosenCardsId = []
+let wonCards = []
+
 
 
 function gamePlay(){
@@ -61,13 +63,35 @@ function gamePlay(){
     }
 }
 
-//checkk for a match
+//check for a match
+
+function checkMatch(){
+    let cards = document.querySelectorAll('img')
+    const optionOneId = chosenCardsId[1]
+    const optionTwoId = chosenCardsId[0]
+    if(cardsChosen[0] === cardschosen[1]){
+        alert('You found a match')
+        cards[optionOneId].setAttribute('src' '')
+        cars[optionTwoId].setAttribute('src', '')
+        winCards.push(chosenCards)
+    }else {
+        cards[optionOneId].setAttribute('src')
+        cards[optionTwoId].setAttribute('src')
+        alert('Try again')
+    }
+    chosenCards = []
+    chosenCardsId = []
+}
 
 //Flip each Card
     function cardFlip() {
         let cardId = this.getAttribute('card-id')
         chosenCards.push(cardArray[cardId].name)
-        chosenCardsId
+        chosenCardsId.push
+        this.setAttribute('src', cardArray[card.id].img)
+        if (cardsChosen.length===2){
+            setTimeout(checkMatch, 500)
+        }
     }
 
 
