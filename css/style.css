@@ -16,6 +16,14 @@ h1{
     font-size: 120px;
 }
 
+.game-count {
+    font-size: 40px;
+}
+
+.game-tries {
+    font-size: 40px;
+}
+
 img{
     height: 300px;
     width: 190px;
@@ -26,6 +34,14 @@ img{
    
 }
 
-.img.flip {
+.flip {
     transform: rotateY(180deg);
+  }
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }

@@ -61,11 +61,6 @@
     
     ]
 
-   // Sort cards into a random order each time game is played using .sort() and Math.random
-    gameCards.sort(() => 0.5 - Math.random())
-
-  
-
     //Game Play 
     
     const gameboard = document.querySelector('.gameboard')
@@ -80,6 +75,8 @@
     // let grid = document.querySelector('.gamecards')
     
     function gamePlay(){
+        // Sort cards into a random order each time game is played using .sort() and Math.random
+        gameCards.sort(() => 0.5 - Math.random())
         for( let i = 0; i < gameCards.length; i++){
             let card = document.createElement('img')
             card.setAttribute('src', './images/backofcard.png')
@@ -164,5 +161,4 @@
         }
         
         
-    
        gamePlay()
