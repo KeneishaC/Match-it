@@ -69,6 +69,7 @@
     //Game Play 
     
     const gameboard = document.querySelector('.gameboard')
+    const getModal = document.querySelector('.modal')
     let chosenCards = []
     let chosenCardsId = []
     let winCards = []
@@ -97,18 +98,29 @@
         let optionTwoName = chosenCards[0]
         let optionOneId = chosenCardsId[0]
         let optionTwoId = chosenCardsId[1]
-        //If selected cards are the same
         if(optionOneName === optionTwoName){
             winCards.push(chosenCards)
             if (winCards.length === gameCards.length/2){
                 announcement.textContent = "You found all the matches!"
-                //Starts a new game once all matches have been found
-                newGame.addEventListener('click', function(){
-                    gameboard.textContent = '';
-                    announcement.textContent = '';
-                    gamePlay();
-                })
+                //Launch modal
+                setTimeout(function() {
+                    
+                    //Starts a new game once all matches have been found
+                    newGame.addEventListener('click', function(){
+                        gameboard.textContent = '';
+                        announcement.textContent = '';
+                        winCards = []
+                        displayResult.textContent = '0';
+                        //removes modal for new game
+                        getModal.classList.remove('is-active')
+                        gamePlay();
+                    })
+                    //targets modal for new game
+                    getModal.classList.add('is-active')
+                }, 750)
+                    
             } else{
+                //If selected cards are the same
              announcement.innerHTML = 'You found a match!'
              setTimeout(function() {
                 announcement.innerHTML = '';
@@ -118,10 +130,10 @@
             }
         }else {
             //If selected cards aren't the same
-            cards[optionOneId].setAttribute('src', './images/backofcard.png')
-            cards[optionTwoId].setAttribute('src', './images/backofcard.png')
             announcement.innerHTML = 'Oh no, Try again!'
-             setTimeout(function() {
+            setTimeout(function() {
+                 cards[optionOneId].setAttribute('src', './images/backofcard.png')
+                 cards[optionTwoId].setAttribute('src', './images/backofcard.png')
                 announcement.innerHTML = '';
                 }, 750);
         }
@@ -135,16 +147,22 @@
         // }
     }
     
-    //Flip each Card
+    //Flip each Card to find a match
         function cardFlip() {
             let cardId = this.getAttribute('card-id')
-            chosenCards.push(gameCards[cardId].name)
-            chosenCardsId.push(cardId)
+            // card.classList.add('flip')
+            //checks if same card is clicked twice
+            if( chosenCardsId.includes(cardId) == false){
+                chosenCards.push(gameCards[cardId].name)
+                chosenCardsId.push(cardId)
+            }
             this.setAttribute('src', gameCards[cardId].img)
             if (chosenCards.length === 2){
-                setTimeout(checkMatch, 500)
+                checkMatch()
+                // setTimeout(checkMatch, 700)
             }
         }
-    
+        
+        
     
        gamePlay()
