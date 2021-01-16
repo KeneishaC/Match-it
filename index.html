@@ -4,27 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="js/script.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <link rel="stylesheet" href="css/reset.css">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>MATCH IT</title>
 </head>
 <body>
+    <header>
+        <h1 class="has-text-primary">MATCH IT</h1>
+    </header>
     <div class="container">
-        <h1 class="title is 1 has-text-primary">MATCH IT</h1>
-        <div class="gameboard">
-            <div class="gamecards">
-                <div class="game-count">
-                    Time <span class="timer has-text-warning-dark">100</span>
-                </div>
-                <div class="game">
-                    Tries <span id="tries">0</span>
-                </div>
+        <div class="gamecards">
+            <div class="game-count">
+                Time <span class="timer has-text-warning-dark">100</span>
             </div>
-            <h1 class="card">
-
-            </h1>
+            <div class="game-tries">
+                Score <span id="score">0</span>
+            </div>
+            <button class="button is-warning is-light new-game">New Game</button>
+        </div>
+        <div class="message"></div>
+        <div class="gameboard">
         </div>
     </div>
 </body>

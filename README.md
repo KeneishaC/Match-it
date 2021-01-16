@@ -7,6 +7,7 @@
 -HTML5
 -ES6
 -CSS
+-CSS Transitions
 -Bulma 
 
 ## WIREFRAME

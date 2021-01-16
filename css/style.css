@@ -1,11 +1,31 @@
-.card {
+.gameboard {
     display: flex;
-    /* flex-direction: row; */
-    flex-wrap: wrap;
-    height: 300px;
-    width: 400px
+    flex-direction: row;
+    flex-wrap: wrap;  
+}
+
+.message {
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+h1{
+    text-align: center;
+    font-size: 120px;
 }
 
 img{
-    height: 230px;
+    height: 300px;
+    width: 190px;
+    padding: 20px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+   
 }
+
+.img.flip {
+    transform: rotateY(180deg);
+  }
