@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;  
+    padding: 30px;
 }
 
 .message {
@@ -11,9 +12,28 @@
     font-size: 30px;
 }
 
+header {
+    background-color: rgba(240, 240, 240, 0.29);
+   position: sticky;
+}
+
 h1{
     text-align: center;
     font-size: 120px;
+    font-family: 'Bubblegum Sans', cursive;
+    color: rgba(148, 148, 148, 0.427);
+}
+body {
+    background-image: url('../images/scott-webb-hDyO6rr3kqk-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position: fixed; */
+}
+
+.container {
+    background-color: rgba(215, 215, 215, 0.427);
+    /* margin: 100px 100px 100px 100px; */
 }
 
 .game-count {
@@ -26,7 +46,7 @@ h1{
 
 img{
     height: 300px;
-    width: 190px;
+    width: 250px;
     padding: 20px;
     transform: scale(1);
     transform-style: preserve-3d;
@@ -44,4 +64,15 @@ img{
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  .fa-github, .fa-linkedin {
+      size: 40px;
+  }
+  footer {
+    height: 50px;
+    margin-bottom: 0;
+    text-align: center;
+    background-color:  rgba(48, 51, 52, 0.29);
+    position: sticky;
   }

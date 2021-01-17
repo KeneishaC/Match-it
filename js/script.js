@@ -71,6 +71,7 @@
     let announcement = document.querySelector('.message')
     let displayResult = document.querySelector('#score')
     let newGame = document.querySelector('.new-game')
+    let timer = document.querySelector('.timer')
 
     // let grid = document.querySelector('.gamecards')
     
@@ -79,7 +80,7 @@
         gameCards.sort(() => 0.5 - Math.random())
         for( let i = 0; i < gameCards.length; i++){
             let card = document.createElement('img')
-            card.setAttribute('src', './images/backofcard.png')
+            card.setAttribute('src', './images/backofcard2.jpg')
             card.setAttribute('card-id', i)
             card.addEventListener('click', cardFlip)
             gameboard.appendChild(card)
@@ -129,8 +130,8 @@
             //If selected cards aren't the same
             announcement.innerHTML = 'Oh no, Try again!'
             setTimeout(function() {
-                 cards[optionOneId].setAttribute('src', './images/backofcard.png')
-                 cards[optionTwoId].setAttribute('src', './images/backofcard.png')
+                 cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
+                 cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
                 announcement.innerHTML = '';
                 }, 750);
         }
