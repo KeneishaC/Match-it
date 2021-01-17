@@ -1,20 +1,39 @@
+* {
+    box-sizing: border-box;
+    /* flex-grow: 1; */
+  }
+
+
 .gameboard {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;  
-    padding: 30px;
+    padding: 0;
+    justify-content: flex-start;
+    /* padding: 30px; */
 }
 
 .message {
     height: 50px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     text-align: center;
     font-size: 30px;
 }
 
 header {
-    background-color: rgba(240, 240, 240, 0.29);
-   position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(240, 240, 240, 0.892);
+    /* position: sticky; */
+    /* margin-bottom: 180px; */
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.score-time{
+    padding: 20px 350px 0px 200px;
 }
 
 h1{
@@ -23,18 +42,41 @@ h1{
     font-family: 'Bubblegum Sans', cursive;
     color: rgba(148, 148, 148, 0.427);
 }
-body {
+.section {
     background-image: url('../images/scott-webb-hDyO6rr3kqk-unsplash.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 0 180px;
     background-repeat: no-repeat;
-    /* position: fixed; */
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 180px;
+    position: relative;
+    /* flex-grow: 1; */
 }
 
-.container {
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 180px;
     background-color: rgba(215, 215, 215, 0.427);
     /* margin: 100px 100px 100px 100px; */
+    /* padding: 100px; */
+    /* width: 100%;
+    height: 100%; */
+    bottom: 70px;
+    /* overflow-y: scroll; */
+    box-sizing: content-box;
+    position: sticky;
+    /* text-align: center; */
+    align-content: center;
+    /* top: 180px; */
 }
+
 
 .game-count {
     font-size: 40px;
@@ -45,8 +87,8 @@ body {
 }
 
 img{
-    height: 300px;
-    width: 250px;
+    height: 250px;
+    width: 200px;
     padding: 20px;
     transform: scale(1);
     transform-style: preserve-3d;
@@ -69,10 +111,17 @@ img{
   .fa-github, .fa-linkedin {
       size: 40px;
   }
+
+  h2 {
+
+  }
+
   footer {
-    height: 50px;
-    margin-bottom: 0;
+    height: 70px;
+    bottom: 0;
     text-align: center;
-    background-color:  rgba(48, 51, 52, 0.29);
-    position: sticky;
+    background-color:  rgba(73, 76, 77, 0.365);
+    position: fixed;
+    width: 100%;
+    margin-top: 0px;
   }
