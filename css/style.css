@@ -6,15 +6,18 @@
 
 .gameboard {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: calc(100vh - 245px);
     padding: 0;
     justify-content: flex-start;
+    align-content: center;
     /* padding: 30px; */
 }
 
 .message {
-    height: 50px;
+    height: 40px;
+    padding: 25px;
     background-color: rgba(255, 255, 255, 0);
     text-align: center;
     font-size: 30px;
@@ -23,7 +26,7 @@
 header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     background-color: rgba(240, 240, 240, 0.892);
     /* position: sticky; */
     /* margin-bottom: 180px; */
@@ -33,10 +36,11 @@ header {
 }
 
 .score-time{
-    padding: 20px 350px 0px 200px;
+    padding: 20px 350px 0px 450px;
 }
 
 h1{
+    padding: 0 30px;
     text-align: center;
     font-size: 120px;
     font-family: 'Bubblegum Sans', cursive;
@@ -62,6 +66,7 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: calc(100% - 247px);
     top: 180px;
     background-color: rgba(215, 215, 215, 0.427);
     /* margin: 100px 100px 100px 100px; */
@@ -90,14 +95,22 @@ img{
     height: 250px;
     width: 200px;
     padding: 20px;
+    backface-visibility: hidden;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .35s ease;
    
 }
 
-.flip {
+.frontimg{
     transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+.backimg{
+    /* transition: transform 1s; */
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
   }
 
 .button {

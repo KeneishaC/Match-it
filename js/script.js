@@ -80,6 +80,7 @@
         gameCards.sort(() => 0.5 - Math.random())
         for( let i = 0; i < gameCards.length; i++){
             let card = document.createElement('img')
+            // card.classList.add('frontimg')
             card.setAttribute('src', './images/backofcard2.jpg')
             card.setAttribute('card-id', i)
             card.addEventListener('click', cardFlip)
@@ -128,13 +129,31 @@
             }
         }else {
             //If selected cards aren't the same
-            announcement.innerHTML = 'Oh no, Try again!'
-            setTimeout(function() {
-                 cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
-                 cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
-                announcement.innerHTML = '';
-                }, 750);
-        }
+            // setTimeout(function(){
+            // }, 450)
+            // setTimeout(function(){
+                //     cards[optionOneId].style.transform = "rotateY(180deg)"
+                //     cards[optionTwoId].style.transform = "rotateY(180deg)"
+                // }, 500)
+                announcement.innerHTML = 'Oh no, Try again!'
+                setTimeout(function() {
+                    // cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
+                    // cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
+                    announcement.innerHTML = '';
+                }, 400);
+                setTimeout(function(){
+                    cards[optionTwoId].classList.add('backimg')
+                    cards[optionOneId].classList.add('backimg')
+                    cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
+                    cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
+                }, 850)
+                setTimeout(function(){
+                    // cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
+                    // cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
+                    cards[optionTwoId].classList.remove('backimg')
+                    cards[optionOneId].classList.remove('backimg')
+                }, 1150)
+            }
         chosenCards = []
         chosenCardsId = []
         //If all matches are made
@@ -148,16 +167,24 @@
     //Flip each Card to find a match
         function cardFlip() {
             let cardId = this.getAttribute('card-id')
-            // card.classList.add('flip')
+            document.querySelectorAll('img')[cardId].classList.add('frontimg')
+            setTimeout(function (){
+                document.querySelectorAll('img')[cardId].classList.remove('frontimg')
+            }, 700)
             //checks if same card is clicked twice
             if( chosenCardsId.includes(cardId) == false){
                 chosenCards.push(gameCards[cardId].name)
                 chosenCardsId.push(cardId)
             }
             this.setAttribute('src', gameCards[cardId].img)
+            // setTimeout(function(){
+            //     this.setAttribute('src', gameCards[cardId].img)
+            // }, 550)
+            // this.style.transform = "rotateY(180deg)"
+                
             if (chosenCards.length === 2){
-                checkMatch()
-                // setTimeout(checkMatch, 700)
+                // checkMatch()
+                setTimeout(checkMatch, 550)
             }
         }
         
