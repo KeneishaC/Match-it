@@ -82,7 +82,7 @@
              clearInterval(ticker) 
              return
              } 
-            timer.innerHTML = time
+            timer.textContent = time
         time++;
         }, 1000)
     
