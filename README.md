@@ -22,7 +22,7 @@
 ![Start new game](images/newgame.png)
 
 ## GETTING STARTED
-[click here](match-it-game.netlify.app) to view deployed app
+[click here](https://match-it-game.netlify.app) to view deployed app
 
 
 
