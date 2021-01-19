@@ -6,11 +6,9 @@
 
 - HTML5
 
-- ES6
+- JavaScript(ES6)
 
-- CSS
-
-- CSS Transitions
+- CSS/ Transitions
 
 - Bulma 
 
@@ -21,8 +19,10 @@
 
 ![After cards are flipped](images/second.png)
 
+![Start new game](images/newgame.png)
+
 ## GETTING STARTED
-[click here] (match-it-game.netlify.app) to view deployed app
+[click here](match-it-game.netlify.app) to view deployed app
 
 
 
