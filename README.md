@@ -22,6 +22,7 @@
 ![After cards are flipped](images/second.png)
 
 ## GETTING STARTED
+[click here] (match-it-game.netlify.app) to view deployed app
 
 
 
