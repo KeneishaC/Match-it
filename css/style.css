@@ -123,8 +123,8 @@ img{
     text-align: center;
   }
 
-  .fa-github, .fa-linkedin {
-      size: 40px;
+    i {
+      size: 25px;
   }
 
   h2 {
