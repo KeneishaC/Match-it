@@ -57,6 +57,22 @@
         {
             name: 'card7',
             img: './images/card7.png'
+        }, 
+        {
+            name: 'card8',
+            img: './images/card8.png'
+        },
+        {
+            name: 'card8',
+            img: './images/card8.png'
+        },
+        {
+            name: 'card9',
+            img: './images/card9.png'
+        },
+        {
+            name: 'card9',
+            img: './images/card9.png'
         }
     
     ]
