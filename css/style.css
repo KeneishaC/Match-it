@@ -127,6 +127,9 @@ img{
       size: 25px;
   }
 
+  a {
+      color: rgba(0, 0, 0, 0.712);
+  }
   h2 {
     font-size: 25px;
   }
