@@ -4,11 +4,15 @@
 
 ## TECHNOLOGIES USED
 
--HTML5
--ES6
--CSS
--CSS Transitions
--Bulma 
+- HTML5
+
+- ES6
+
+- CSS
+
+- CSS Transitions
+
+- Bulma 
 
 ## WIREFRAME
 
