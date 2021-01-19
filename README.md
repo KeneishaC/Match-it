@@ -13,7 +13,9 @@
 ## WIREFRAME
 
 ## SCREENSHOTS
+![Before card is flipped](images/first.png)
 
+![After cards are flipped](images/second.png)
 
 ## GETTING STARTED
 

@@ -170,7 +170,7 @@
                     // cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
                     // cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
                     announcement.innerHTML = 'Oh no, Try again!'
-                }, 600);
+                }, 500);
                 setTimeout(function(){
                     cards[optionTwoId].classList.add('backimg')
                     cards[optionOneId].classList.add('backimg')
