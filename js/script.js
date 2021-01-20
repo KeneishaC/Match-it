@@ -103,27 +103,37 @@
         }, 1000)
     
     }
-    // let grid = document.querySelector('.gamecards')
     
-    function gamePlay(){
+function gamePlay(){
         // Sort cards into a random order each time game is played using .sort() and Math.random
         gameCards.sort(() => 0.5 - Math.random())
         timerFunction()
         for( let i = 0; i < gameCards.length; i++){
             let card = document.createElement('img')
-            // card.classList.add('frontimg')
             card.setAttribute('src', './images/backofcard2.jpg')
             card.setAttribute('card-id', i)
             card.addEventListener('click', cardFlip)
-            gameboard.appendChild(card)
+            let frontOfCard = document.createElement('img')
+            frontOfCard.setAttribute('src', gameCards[i].img)
+            frontOfCard.classList.add('frontimg', i)
+            frontOfCard.style.transform = 'rotateY(180deg)'
+            card.classList.add('backimg', i)
+            let cardDiv = document.createElement('div')
+            cardDiv.classList.add('flip', i)
+            cardDiv.addEventListener('click', function(){
+                cardDiv.style.transform = 'rotateY(180deg)'
+            })
+            cardDiv.appendChild(card)
+            cardDiv.appendChild(frontOfCard)
+            gameboard.appendChild(cardDiv)
         }
-        // alert('Game Starts!')
     }
 
     //check for a match
     
     function checkMatch(){
-        let cards = document.querySelectorAll('img')
+        let cards = document.querySelectorAll('.frontimg')
+        let cardsBack = document.querySelectorAll('.backimg')
         let optionOneName = chosenCards[1]
         let optionTwoName = chosenCards[0]
         let optionOneId = chosenCardsId[0]
@@ -159,59 +169,45 @@
             // chosenCardsId=[]
             }
         }else {
+            document.querySelectorAll('.flip')[optionOneId].addEventListener('click', function(){
+                document.querySelectorAll('.flip')[optionOneId].style.transform = 'rotateY(180deg)'
+                cards[optionOneId].style.transform = 'rotateY(180deg)'
+            })
+            document.querySelectorAll('.flip')[optionTwoId].addEventListener('click', function(){
+                document.querySelectorAll('.flip')[optionTwoId].style.transform = 'rotateY(180deg)'
+                cards[optionTwoId].style.transform = 'rotateY(180deg)'
+            })
             //If selected cards aren't the same
-            // setTimeout(function(){
-            // }, 450)
-            // setTimeout(function(){
-                //     cards[optionOneId].style.transform = "rotateY(180deg)"
-                //     cards[optionTwoId].style.transform = "rotateY(180deg)"
-                // }, 500)
                 setTimeout(function() {
-                    // cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
-                    // cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
-                    announcement.innerHTML = 'Oh no, Try again!'
+        
+                    announcement.innerHTML = 'Try again!'
                 }, 500);
                 setTimeout(function(){
-                    cards[optionTwoId].classList.add('backimg')
-                    cards[optionOneId].classList.add('backimg')
-                    cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
-                    cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
+                    cards[optionOneId].style.transform = ''
+                    cards[optionTwoId].style.transform = ''
                     announcement.innerHTML = '';
                 }, 850)
-                setTimeout(function(){
-                    // cards[optionOneId].setAttribute('src', './images/backofcard2.jpg')
-                    // cards[optionTwoId].setAttribute('src', './images/backofcard2.jpg')
-                    cards[optionTwoId].classList.remove('backimg')
-                    cards[optionOneId].classList.remove('backimg')
-                }, 1150)
             }
         chosenCards = []
         chosenCardsId = []
         //If all matches are made
         displayResult.textContent = winCards.length
-        // if (winCards.length === gameCards.length/2){
-
-        //     announcement.textContent = "You found all the matches!"
-        // }
+        
     }
     
     //Flip each Card to find a match
         function cardFlip() {
             let cardId = this.getAttribute('card-id')
-            document.querySelectorAll('img')[cardId].classList.add('frontimg')
-            setTimeout(function (){
-                document.querySelectorAll('img')[cardId].classList.remove('frontimg')
-            }, 700)
+            document.querySelectorAll('.flip')[cardId].style.removeProperty('transform')
+            // document.querySelectorAll('.frontimg')[cardId].style.removeProperty('transform')
+            document.querySelectorAll('.backimg')[cardId].style.transform = 'rotateY(180deg)'
+            
             //checks if same card is clicked twice
             if( chosenCardsId.includes(cardId) == false){
                 chosenCards.push(gameCards[cardId].name)
                 chosenCardsId.push(cardId)
             }
-            this.setAttribute('src', gameCards[cardId].img)
-            // setTimeout(function(){
-            //     this.setAttribute('src', gameCards[cardId].img)
-            // }, 550)
-            // this.style.transform = "rotateY(180deg)"
+            
                 
             if (chosenCards.length === 2){
                 // checkMatch()
