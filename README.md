@@ -28,7 +28,7 @@
 ## Future Updates
 - complete timer function
 - add score board that shows the high scores of each player 
-- make animations smother
+- make animations smoother
 
 
 
